@@ -1,7 +1,7 @@
 FROM python:3.7-slim
 
 RUN mkdir /app
-COPY rest_api.py /app
+COPY app.py /app
 COPY requirements.txt /app
 COPY . /app
 WORKDIR /app
