@@ -8,4 +8,4 @@ WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT ["flask","run","-port","5005"]
+ENTRYPOINT ["flask","run","--port","5005"]
