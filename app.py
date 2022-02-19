@@ -18,10 +18,10 @@ import datetime
 
 app = Flask(__name__)
 
-app.model=pickle.load(open("/home/rj133/Project2/model_v1.pickle","rb"))
-app.vectorizer=pickle.load(open("/home/rj133/Project2/vectorizer.pickle","rb"))
-app.tf_transformer=pickle.load(open("/home/rj133/Project2/tf_transformer.pickle","rb"))
-app.filePath = "/home/rj133/Project2/model_v1.pickle"
+app.model=pickle.load(open("model_v1.pickle","rb"))
+app.vectorizer=pickle.load(open("vectorizer.pickle","rb"))
+app.tf_transformer=pickle.load(open("tf_transformer.pickle","rb"))
+app.filePath = "model_v1.pickle"
 app.ModifiedTime=time.localtime(os.stat(app.filePath).st_mtime) #文件访问时间 
 app.time=time.strftime("%Y-%m-%d-%H:%M:%S",app.ModifiedTime)
 
