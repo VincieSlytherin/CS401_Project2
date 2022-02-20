@@ -51,4 +51,4 @@ def predict_country():
     #     ModifiedTime=time.localtime(os.stat(filePath).st_mtime) #文件访问时间 
     #     d2=time.strftime("%Y-%m-%d-%H:%M:%S",ModifiedTime)
 
-    return jsonify({"is_american":str(predicted[0]),"version":"MultinomialNB_1","model_date":app.time})
+    return jsonify({"is_american":str(predicted[0]),"version":"MultinomialNB_0","model_date":app.time})
