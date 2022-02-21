@@ -23,6 +23,10 @@ app.time=pickle.load(open("model_v1.pickle","rb"))
 app.model=pickle.load(open("model_v1.pickle","rb"))
 app.vectorizer=pickle.load(open("vectorizer.pickle","rb"))
 app.tf_transformer=pickle.load(open("tf_transformer.pickle","rb"))
+# app.filePath = "model_v1.pickle"
+# app.ModifiedTime=time.localtime(os.stat(app.filePath).st_mtime) #文件访问时间 
+
+
 
 @app.route("/api/american",methods=["POST"])
 
@@ -30,18 +34,13 @@ app.tf_transformer=pickle.load(open("tf_transformer.pickle","rb"))
 def predict_country():
     
     content = request.get_json(force=True) 
-    if type(content["text"])!=str:
-        raise TypeError
-#         return None
-    else:
+
        
-        text=np.array([content["text"]])
+    text=np.array([content["text"]])
 
-        text1=app.vectorizer.transform(text)
-        text2=app.tf_transformer.transform(text1)
-        predicted = app.model.predict(text2)
-        prediction=predicted.tolist()
-        result=""
-
+    text1=app.vectorizer.transform(text)
+    text2=app.tf_transformer.transform(text1)
+    predicted = app.model.predict(text2)
+    prediction=predicted.tolist()
 
     return jsonify({"is_american":str(predicted[0]),"version":app.version,"model_date":app.time})
