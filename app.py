@@ -18,9 +18,16 @@ import datetime
 
 app = Flask(__name__)
 
-app.version=pickle.load(open("model_v1.pickle","rb"))
-app.time=pickle.load(open("model_v1.pickle","rb"))
-app.model=pickle.load(open("model_v1.pickle","rb"))
+with open('model_v1.pickle', 'rb') as f:
+    
+    app.version=pickle.load(f)
+    app.time = pickle.load(f)#time
+    app.model=pickle.load(f)#model
+    
+
+# app.version=pickle.load(open("model_v1.pickle","rb"))
+# app.time=pickle.load(open("model_v1.pickle","rb"))
+# app.model=pickle.load(open("model_v1.pickle","rb"))
 app.vectorizer=pickle.load(open("vectorizer.pickle","rb"))
 app.tf_transformer=pickle.load(open("tf_transformer.pickle","rb"))
 # app.filePath = "model_v1.pickle"
