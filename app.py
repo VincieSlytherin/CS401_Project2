@@ -29,4 +29,4 @@ def predict_country():
     predicted = app.model.predict(text2)
     prediction=predicted.tolist()
 
-    return jsonify({"is_american":str(predicted[0]),"version":app.version,"model_date":app.time})
+    return jsonify({"is_american":str(predicted[0]),"version":v2,"model_date":app.time})
