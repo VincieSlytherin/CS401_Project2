@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 from flask import Flask
 from flask import request
 from flask import jsonify
@@ -11,10 +5,6 @@ import pickle
 import numpy as np
 import os.path, time
 import datetime
-
-
-
-# In[ ]:
 
 app = Flask(__name__)
 
