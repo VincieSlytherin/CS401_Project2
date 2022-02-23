@@ -7,7 +7,7 @@ import os.path, time
 import datetime
 
 app = Flask(__name__)
-with open('model_v1.pickle', 'rb') as f:    
+with open('model_v2.pickle', 'rb') as f:    
     app.version=pickle.load(f)
     app.time = pickle.load(f)#time
     app.model=pickle.load(f)#model
