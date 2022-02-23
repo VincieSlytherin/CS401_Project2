@@ -11,6 +11,7 @@ with open('model_v2.pickle', 'rb') as f:
     app.version=pickle.load(f)
     app.time = pickle.load(f)#time
     app.model=pickle.load(f)#model
+    
 
 app.vectorizer=pickle.load(open("vectorizer.pickle","rb"))
 app.tf_transformer=pickle.load(open("tf_transformer.pickle","rb"))
