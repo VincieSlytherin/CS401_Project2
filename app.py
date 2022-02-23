@@ -23,5 +23,4 @@ def predict_country():
     text2=app.tf_transformer.transform(text1)
     predicted = app.model.predict(text2)
     prediction=predicted.tolist()
-
     return jsonify({"is_american":str(predicted[0]),"version":app.version,"model_date":app.time})
